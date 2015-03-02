@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Touple</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav>
+  <div>
+  <% if current_user %>
+    <ul id="user_panel">
+      <li><%= current_user.email %></li>
+      <li><%= link_to "Log Out", "/sessions/delete", method: "delete" %></li>
+    </ul>
+  <% end %>
+  </div>
+</nav>
+<%= yield %>
+
+</body>
+</html>
