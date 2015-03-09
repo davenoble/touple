@@ -7,16 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <div>
-  <% if current_user %>
-    <ul id="user_panel">
-      <li><%= current_user.email %></li>
-      <li><%= link_to "Log Out", "/sessions/delete", method: "delete" %></li>
-    </ul>
+
+	<div id="title">
+		<h1>Touple</h1>
+	
+	<% if current_user %>
+		<ul id="user_panel">
+			<li><h3><%= current_user.email %></h3></li>
+			<li><%= link_to "Log Out", "/sessions/delete", method: "delete" %></li>
+		</ul>
   <% end %>
   </div>
-</nav>
+  
 <%= yield %>
 
 </body>
