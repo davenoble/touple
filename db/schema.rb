@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310010355) do
+ActiveRecord::Schema.define(version: 20150310202235) do
 
   create_table "arguments", force: :cascade do |t|
     t.string   "owner_description"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20150310010355) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "relationships_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "relationship_id"
+  end
+
+  add_index "relationships_users", ["relationship_id"], name: "index_relationships_users_on_relationship_id"
+  add_index "relationships_users", ["user_id"], name: "index_relationships_users_on_user_id"
+
   create_table "surveys", force: :cascade do |t|
     t.integer  "happy_sad"
     t.integer  "lonely_crowded"
@@ -80,13 +88,5 @@ ActiveRecord::Schema.define(version: 20150310010355) do
     t.string   "first_name"
     t.string   "bio"
   end
-
-  create_table "users_relationships", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "relationship_id"
-  end
-
-  add_index "users_relationships", ["relationship_id"], name: "index_users_relationships_on_relationship_id"
-  add_index "users_relationships", ["user_id"], name: "index_users_relationships_on_user_id"
 
 end

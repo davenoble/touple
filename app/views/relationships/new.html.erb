@@ -1,2 +1,21 @@
-<h1>Relationships#new</h1>
-<p>Find me in app/views/relationships/new.html.erb</p>
+<h1>Let's create a new relationship'</h1>
+
+<%= form_for @relationship do |f| %>
+	<% if @relationship.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% @relationship.errors.full_messages.each do |message| %>
+					<li> <%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :status %> <br />
+		<%= f.text_field :status %>
+	</div>
+
+	<div class="actions"> <%= f.submit %> </div>
+<% end %>

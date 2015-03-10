@@ -13,7 +13,7 @@
 	
 	<% if current_user %>
 		<ul id="user_panel">
-			<li><h3><%= current_user.email %></h3></li>
+			<li><%= link_to current_user.email, current_user %></li>
 			<li><%= link_to "Log Out", "/sessions/delete", method: "delete" %></li>
 		</ul>
   <% end %>

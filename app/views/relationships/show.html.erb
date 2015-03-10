@@ -1,2 +1,13 @@
-<h1>Relationships#show</h1>
-<p>Find me in app/views/relationships/show.html.erb</p>
+<div id="view_pane">
+	<h1>Relationship Status</h1>
+	<h3><%= current_user.relationships.first.status %></h3>
+
+</div>
+<div id="first_person">
+	<h4><%= @relationship.users.first.first_name + "  " + @relationship.users.first.last_name %></h4>
+	<h4><%= @relationship.users.first.email %></h4>
+</div>
+<div id="second_person">
+	<h4><%= @relationship.users.second.first_name + "  " + @relationship.users.second.last_name %></h4>
+	<h4><%= @relationship.users.second.email %></h4>
+</div>

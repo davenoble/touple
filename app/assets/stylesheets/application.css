@@ -19,9 +19,8 @@ body {
 
 h1 {
       font-size: 1.5em;
-      padding: 1em 8px;
       color: #333;
-      margin: 0; }
+      margin: 0}
       
 #title {
       width: 100%;
@@ -39,15 +38,21 @@ border-right: 1px solid #ccc; }
 #title h1 {
 	display: inline-block;
 	color: #069;
-	margin-left: 15px;
+	padding 0;
+	padding: 0px 15px 0px 15px;
+	line-height:  60px;
+	border-right: 1px solid #ccc;
 }
 
+#title h1:hover {
+	background-color: #fff; }
 
 
 #user_panel {
   list-style: none;
   float: right;
-  padding: 10px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   display: block;
 
 }
@@ -55,7 +60,7 @@ border-right: 1px solid #ccc; }
 #user_panel li {
       float: left; }
 
-#user_panel li a {
+#user_panel li h3 {
       display: block;
       text-decoration: none;
       font-weight: bold;
@@ -66,20 +71,18 @@ border-right: 1px solid #ccc; }
       padding-left: 10px;
       padding-right: 10px; }
       
-#user_panel li h3 {
+#user_panel li a {
       display: block;
       text-decoration: none;
       font-weight: bold;
       color: #069;
-      border-right: 1px solid #ccc;
       border-left: 1px solid #ccc;
       margin: 0;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 20px 10px 20px 10px;
        }
 
 #user_panel li a:hover {
-      color: #c00;
       background-color: #fff; }
+     
 
 
