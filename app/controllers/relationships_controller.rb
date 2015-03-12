@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   
   def index
     if current_user
-      @relationship = current_user.relationships.first
+      @relationship = current_relationship
       render 'show'
     else
       redirect_to "/login" #Why doesnt "sessions#new" work here?
@@ -21,10 +21,11 @@ class RelationshipsController < ApplicationController
   end
 
   def show
-    @relationship = current_user.relationships.first
+    @relationship = current_relationship
   end
 
   def update
+    @relationship = current_relationship
   end
 
 
@@ -33,4 +34,8 @@ class RelationshipsController < ApplicationController
   def relationship_params
     params.require(:relationship).permit(:status)
   end
+  def current_relationship
+    @relationship = current_user.relationships.first
+  end
+  
 end

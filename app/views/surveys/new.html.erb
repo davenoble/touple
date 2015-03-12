@@ -1,0 +1,41 @@
+<%= form_for @survey do |t| %>
+	<% if @survey.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% @survey.errors.full_messages.each do |message| %>
+					<li> <%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="field">
+		<%= t.label :happy_sad %> <br />
+		<%= t.range_field :happy_sad, value: 0, min: -50, max: 50 %>
+	</div>
+	
+	<div class="field">
+		<%= t.label :lonely_crowded %> <br />
+		<%= t.range_field :lonely_crowded, value: 0, min: -50, max: 50 %>
+	</div>
+	
+	<div class="field">
+		<%= t.label :horny_pressured %> <br />
+		<%= t.range_field :horny_pressured, value: 0, min: -50, max: 50 %>
+	</div>
+
+	
+	<div class="field">
+		<%= t.label :janitor_nagged %> <br />
+		<%= t.range_field :janitor_nagged, value: 0, min: -50, max: 50 %>
+	</div>
+
+	
+	<div class="field">
+		<%= t.label :journal_entry %> <br />
+		<%= t.text_field :journal_entry %>
+	</div>
+	
+	<div class="actions"> <%= t.submit %> </div>
+<% end %>

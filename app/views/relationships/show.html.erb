@@ -4,10 +4,27 @@
 
 </div>
 <div id="first_person">
-	<h4><%= @relationship.users.first.first_name + "  " + @relationship.users.first.last_name %></h4>
-	<h4><%= @relationship.users.first.email %></h4>
+	<h4><%= @relationship.users.first.first_name + "  " + @relationship.users.first.last_name %>
+	-<%= @relationship.users.first.surveys.last.created_at.to_formatted_s(:long)   %></h4>
+	<h2>Happy Sad</h2>
+	<h1><%= @relationship.users.first.surveys.last.happy_sad %></h2>
+	<h2>lonely_crowded</h2>
+	<h1><%= @relationship.users.first.surveys.last.lonely_crowded %></h2>
+	<h2>horny_pressured</h2>
+	<h1><%= @relationship.users.first.surveys.last.horny_pressured %></h2>
+	<h2>janitor_nagged</h2>
+	<h1><%= @relationship.users.first.surveys.last.janitor_nagged %></h2>
 </div>
 <div id="second_person">
-	<h4><%= @relationship.users.second.first_name + "  " + @relationship.users.second.last_name %></h4>
-	<h4><%= @relationship.users.second.email %></h4>
+	<h4><%= @relationship.users.second.first_name + "  " + @relationship.users.second.last_name %>
+	-<%= @relationship.users.second.surveys.last.created_at.to_formatted_s(:long) %></h4>
+	<h2>Happy Sad</h2>
+	<h1><%= @relationship.users.second.surveys.last.happy_sad %></h2>
+	<h2>lonely_crowded</h2>
+	<h1><%= @relationship.users.second.surveys.last.lonely_crowded %></h2>
+	<h2>horny_pressured</h2>
+	<h1><%= @relationship.users.second.surveys.last.horny_pressured %></h2>
+	<h2>janitor_nagged</h2>
+	<h1><%= @relationship.users.second.surveys.last.janitor_nagged %></h2>
+
 </div>

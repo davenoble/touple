@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
     
     validates_presence_of :password, on: :create
     validates :email, uniqueness: true
+    
+    def today
+      where(:created_at => (Time.now.beginning_of_day..Time.now))
+    end
+
+    def this_week
+      where(:created_at => (Time.now.beginning_of_week..Time.now))
+    end
 end

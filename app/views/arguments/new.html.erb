@@ -1,0 +1,23 @@
+<h1>Argument Mediation :)</h1>
+
+<%= form_for @argument do |f| %>
+	<% if @argument.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% @argument.errors.full_messages.each do |message| %>
+					<li> <%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :owner_descritpion %> <br />
+		<%= f.text_area :owner_description %>
+	</div>
+
+	
+
+	<div class="actions"> <%= f.submit %> </div>
+<% end %>

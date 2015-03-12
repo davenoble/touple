@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :arguments
   resources :sessions
   resources :relationships
   resources :users
+  #get 'surveys/new' => 'surveys#new'
+  #post 'surveys/create' => 'surveys#create'
+  resources :surveys
   root to: 'relationships#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
