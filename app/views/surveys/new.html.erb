@@ -9,33 +9,44 @@
 			</ul>
 		</div>
 	<% end %>
-	
-	<div class="field">
-		<%= t.label :happy_sad %> <br />
-		<%= t.range_field :happy_sad, value: 0, min: -50, max: 50 %>
-	</div>
-	
-	<div class="field">
-		<%= t.label :lonely_crowded %> <br />
-		<%= t.range_field :lonely_crowded, value: 0, min: -50, max: 50 %>
-	</div>
-	
-	<div class="field">
-		<%= t.label :horny_pressured %> <br />
-		<%= t.range_field :horny_pressured, value: 0, min: -50, max: 50 %>
-	</div>
 
-	
-	<div class="field">
-		<%= t.label :janitor_nagged %> <br />
-		<%= t.range_field :janitor_nagged, value: 0, min: -50, max: 50 %>
-	</div>
+		<%= t.hidden_field :happy_sad, value: 0%>
+		<%= t.hidden_field :lonely_crowded, value: 0 %>
+		<%= t.hidden_field :horny_pressured, value: 0 %>
+		<%= t.hidden_field :janitor_nagged, value: 0 %>
+		
 
-	
-	<div class="field">
+	<div id="survey_pane">
+		<div class="sliderContainer">
+			<h5>Manic</h5>
+			<div id="happy" class="coloredSlider"></div>
+			<h5>Depressed</h5>
+		</div>
+		
+		<div class="sliderContainer">
+			<h5>Lonely</h5>
+			<div id="lonely" class="coloredSlider"></div>
+			<h5>Crowded</h5>
+		</div>
+		
+		<div class="sliderContainer">
+			<H5>Horny</h5>
+			<div id="horny" class="coloredSlider"></div>
+			<h5>Pressured</h5>
+		</div>
+		
+		<div class="sliderContainer">
+			<H5 class="leftSide">Janitor</h5>
+			<div id="janitor" class="coloredSlider"></div>
+			<h5>Nagged</h5>
+		</div>
+		
 		<%= t.label :journal_entry %> <br />
-		<%= t.text_field :journal_entry %>
+		<%= t.text_field :journal_entry, size: 150 %>
+		
+		
 	</div>
 	
 	<div class="actions"> <%= t.submit %> </div>
+
 <% end %>
